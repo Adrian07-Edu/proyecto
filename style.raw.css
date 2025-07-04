@@ -11,7 +11,7 @@ header {
   top: 0;
   width: 100%;
   height: 6rem;
-  transition: height 0.3s;
+  transition: height 0.3s ease;
   background-color: #222;
   overflow: hidden;
   box-sizing: border-box;
@@ -26,11 +26,14 @@ header {
     h1 {
       font-size: 3rem;
       margin: 1rem;
+      transition: width 0.3s ease;
     }
   }
   nav {
     width: 100%;
     ul {
+      display: flex;
+      flex-wrap: wrap;
       padding: 0;
       list-style: none;
       width: 100%;
@@ -61,17 +64,66 @@ main {
   bottom: 0;
   overflow-y: auto;
   .content {
-    width: 60%;
-    margin: auto
+    max-width: 60%;
+    margin: 1rem auto;
+    border-radius: 10px;
+    background-color: #333;
+    padding: 1rem;
+    transition: max-width 0.3s ease;
+    article {
+      h2 {
+        font-size: 3rem;
+        text-align: center;
+        margin: 1rem 0;
+      }
+      section {
+        h3 {
+          font-size: 2rem;
+          margin-bottom: 0;
+        }
+      }
+    }
   }
   .sub-nav {
     position: fixed;
     left: 0;
-    background-color: beige;
-    width: 12rem;
+    background-color: #2e2e2e;
+    max-width: 12rem;
     bottom: 0;
-    height: 100ch;
+    top: 6rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: max-width 0.3s ease, top 0.3s ease;
+    svg {
+      opacity: 0;
+      margin-top: 1rem;
+      /* Se usa para expandir la barra al limite cuando esta comprimida */
+      width: 3rem;
+      box-sizing: border-box;
+    }
+    nav {
+      text-decoration: bold;
+      overflow: hidden;
+      padding-right: 1rem;
+      ol li {
+        a {
+          color: currentColor;
+          text-decoration: none;
+          font-weight: bold;
+          &:hover {
+            /* Para cambiar el color automaticamente */
+            opacity: 0.8;
+          }
+        }
+        ol {
+          list-style: lower-alpha;
+        }
+      }
+    }
   }
+}
+li ol {
+  padding: 0 0 0.5rem 1rem;
 }
 @keyframes target {
   0% {
@@ -83,10 +135,87 @@ main {
 }
 
 :target {
-  animation: target 1s normal ease-in;
+  animation: target 0.3s normal ease-in;
 }
 .white-block {
   background-color: white;
   width: 50px;
   height: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+  main {
+    margin-left: 12rem;
+    .content {
+      max-width: 80%;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  main .content {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 730px) {
+  header {
+    height: 10rem;
+    .title {
+      justify-content: center;
+      h1 {
+        width: 50%;
+      }
+    }
+    &:hover {
+      height: 19rem;
+    }
+  }
+  main {
+    top: 10rem;
+    margin-left: 3rem;
+    .sub-nav {
+      top: 10rem;
+      max-width: 3rem;
+      svg {
+        opacity: 1;
+        transition: opacity 1s;
+      }
+      nav {
+        max-height: 0;
+        max-width: 0;
+      }
+      &:hover {
+        max-width: 50vw;
+        svg {
+          opacity: 0.5;
+        }
+        nav {
+          max-width: 100%;
+          max-height: 100%;
+          /* Originalmente se usaria display: none y display block
+          pero se presentaros problemas de ordenamiento*/
+          /* Se utiliza el max-height para animar y
+           el max-width para ocultar*/
+          /* La animacion es solo para que se acomode antes de que
+          se vea por eso tiene delay*/
+          transition: max-height 3s 0.3s linear;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  header .title h1 {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 510px) {
+  header nav ul {
+    justify-self: center;
+    width: 80%;
+    li {
+      width: 50%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
 }
