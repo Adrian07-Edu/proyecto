@@ -29,7 +29,7 @@
           <ol>
             <li><a href="#tipos">Tipos de estructuras</a></li>
             <li>
-              <a href="#no-lineales">No lineales</a>
+              <a href="#jerarquicas">Jerárquicas</a>
               <ol>
                 <li><a href="#arbol-general">Arbol General</a></li>
                 <li><a href="#arbol-binario">Arbol Binario</a></li>
@@ -40,8 +40,7 @@
               <ol>
                 <li><a href="#arreglo">Arreglo</a></li>
                 <li><a href="#lista-enlazada">Lista enlazada</a></li>
-                <li><a href="#pila">Pila</a></li>
-                <li><a href="#cola">Cola</a></li>
+                <li><a href="#pila-cola">Pila y Cola</a></li>
               </ol>
             </li>
             <li>
@@ -55,18 +54,126 @@
         </nav>
       </div>
       <div class="content">
-        <article>
+        <article id="tipos">
           <h2>Tipos de estructuras</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere ipsum nam, fugit labore voluptatum repellendus aut nemo! Quae iusto nulla quod veritatis amet omnis ullam, molestias ipsa quibusdam culpa accusamus voluptas pariatur expedita iste, nesciunt dignissimos, possimus nobis quos deleniti similique itaque voluptatem? Placeat, modi ad iste cupiditate rerum nobis.</p>
+          <p>
+            Las estructuras de datos son tipos de datos complejos en los que se suelen guardar
+            diferentes tipos de informacion dependiendo de la estructura, estas a su vez pueden
+            tener valores complejos o primitivos. Las estructuras de datos pueden dividirse en 3
+            categorias <a href="#jerarquicas">jerárquicas</a>, <a href="#lineales">lineales</a> y
+            <a href="#abstractas">abstractas</a>.
+          </p>
+        </article>
+        <article id="jerarquicas">
+          <h2>Jerárquicas</h2>
+          <section id="arbol-general">
+            <h3>Árbol General</h3>
+            <div class="img1 p1">
+              <p>
+                Las estructuras de árbol tienen su valor propio y ademas otras estructuras del mismo
+                tipo como hijos. Esto hace que al momento de ser representada tenga una forma
+                similar a un árbol con sus ramas y sus hojas como se muestra en la imagen.
+              </p>
+              <p>
+                Un claro ejemplo de este tipo de estructuras es una pagina web en la que los
+                diferentes elementos ejercen como nodos hijos de otro como se es visible al momento
+                de crear el documento HTML.
+              </p>
+              <img src="img/arbol-general.png" />
+            </div>
+          </section>
+          <section id="arbol-binario">
+            <h3 class="derecha">Árbol Binario</h3>
+            <div class="img2 p2">
+              <p>
+                Lo que difiere un árbol biario de uno general es que el binario solo puede tener 2
+                hijos, el izquierdo y el derecho.
+              </p>
+              <p>
+                El árbol binario tiene una variante que esta diseñada para buscar elementos el
+                "árbol binario de busqueda" en el que se ponen los valores menores hacia un lado y
+                los mayores al otro haciendo que la busqueda se mas facil.
+              </p>
+              <img src="img/arbol-binario.png" />
+            </div>
           </section>
         </article>
-        <article>
-          <h2>No lineales</h2>
-          <section id="arbol-binario">
-            <h3>Arbol binario</h3>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum perferendis veniam a illo, praesentium quasi temporibus voluptatibus eligendi eveniet? Officiis vel sunt fugit sapiente, officia odio distinctio mollitia quam minima, ipsa nobis fuga voluptatibus dicta voluptatem voluptatum enim voluptate? Ab ut totam quo unde accusamus dicta perspiciatis? Reiciendis, animi doloribus.
+        <article id="lineales">
+          <h2>Lineales</h2>
+          <section id="arreglo">
+            <h3>Arreglo</h3>
+            <div class="img2 p1 pf">
+              <p>
+                Los arreglos tambien conocidas como listas son un tipo de datos que se almacenan de
+                forma secuencial en memoria, en esta estructura leer un elemento en la posición
+                <i>n</i> es muy facil pero agregar un elemento es costoso si el espacio en memoria
+                actual no es lo suficientemente grandea ademas de que borrar un elemento que no sea
+                el ultimo es muy costoso por tener que copiar la información para que la lista no
+                quede con un hueco vacio.
+              </p>
+              <p>
+                En conclusion los arreglos son muy eficientes para leer información pero no para ser
+                modificados con frecuencia.
+              </p>
+              <img src="img/arreglo.jpg" />
+            </div>
           </section>
+          <section id="lista-enlazada">
+            <h3>Lista enlazada</h3>
+            <div class="img1 p1 pf">
+              <p>
+                Las listas enlazadas los datos pueden estar dispersos por la memoria siendo unidos
+                unicamente por la referencia del elemento anterior lo que hace que eliminar
+                elementos sea tan facil como solo cambiar la referencia del elemento esto disminuye
+                el coste de creacion y borrado de elementos pero dificulta la lectura de elementos
+                siendo practicamente lo opuesto a un arreglo.
+              </p>
+              <p>
+                Las listas enlazadas son mas eficientes para modificar pero no lo son para leer el
+                contenido de este debido a que hay que ir elemento por elemento hasta llegar al dato
+                deseado.
+              </p>
+              <img src="img/lista-enlazada.png" />
+            </div>
           </section>
+          <div class="doble-section" id="pila-cola">
+            <section>
+              <h3 class="derecha">Pila</h3>
+              <div class="img1 p1 pf">
+                <p>
+                  Las listas enlazadas los datos pueden estar dispersos por la memoria siendo unidos
+                  unicamente por la referencia del elemento anterior lo que hace que eliminar
+                  elementos sea tan facil como solo cambiar la referencia del elemento esto
+                  disminuye el coste de creacion y borrado de elementos pero dificulta la lectura de
+                  elementos siendo practicamente lo opuesto a un arreglo.
+                </p>
+                <p>
+                  Las listas enlazadas son mas eficientes para modificar pero no lo son para leer el
+                  contenido de este debido a que hay que ir elemento por elemento hasta llegar al
+                  dato deseado.
+                </p>
+                <img src="img/lista-enlazada.png" />
+              </div>
+            </section>
+            <section>
+              <h3 class="derecha">Pila</h3>
+              <div class="img1 p1 pf">
+                <p>
+                  Las listas enlazadas los datos pueden estar dispersos por la memoria siendo unidos
+                  unicamente por la referencia del elemento anterior lo que hace que eliminar
+                  elementos sea tan facil como solo cambiar la referencia del elemento esto
+                  disminuye el coste de creacion y borrado de elementos pero dificulta la lectura de
+                  elementos siendo practicamente lo opuesto a un arreglo.
+                </p>
+                <p>
+                  Las listas enlazadas son mas eficientes para modificar pero no lo son para leer el
+                  contenido de este debido a que hay que ir elemento por elemento hasta llegar al
+                  dato deseado.
+                </p>
+                <img src="img/lista-enlazada.png" />
+              </div>
+            </section>
+          </div>
         </article>
       </div>
     </main>
