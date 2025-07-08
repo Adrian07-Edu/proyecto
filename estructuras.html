@@ -1,184 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title></title>
-		<link rel="stylesheet" href="style.raw.css" />
-	</head>
-	<body>
-		<main>
-			<div class="sub-nav">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="32"
-					height="32"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="red"
-					stroke-width="1"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				>
-					<path d="M4 6l16 0" />
-					<path d="M4 12l16 0" />
-					<path d="M4 18l16 0" />
-				</svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="style.raw.css" />
+  </head>
+  <body>
+    <main>
+      <div class="sub-nav">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="red"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 6l16 0" />
+          <path d="M4 12l16 0" />
+          <path d="M4 18l16 0" />
+        </svg>
 
-				<nav>
-					<ol>
-						<li><a href="#tipos">Tipos de estructuras</a></li>
-						<li>
-							<a href="#jerarquicas">Jerárquicas</a>
-							<ol>
-								<li><a href="#arbol-general">Arbol General</a></li>
-								<li><a href="#arbol-binario">Arbol Binario</a></li>
-							</ol>
-						</li>
-						<li>
-							<a href="#lineales">Lineales</a>
-							<ol>
-								<li><a href="#arreglo">Arreglo</a></li>
-								<li><a href="#lista-enlazada">Lista enlazada</a></li>
-								<li>
-									<a href="#pila-cola">Pila y Cola</a>
-									<ol>
-										<li><a href="#pila">Pila</a></li>
-										<li><a href="#cola">Cola</a></li>
-									</ol>
-								</li>
-							</ol>
-						</li>
-						<li>
-							<a href="#abstractas">Abstractas</a>
-							<ol>
-								<li><a href="#conjunto">Conjunto</a></li>
-								<li><a href="#diccionario">Diccionario</a></li>
-							</ol>
-						</li>
-					</ol>
-				</nav>
-			</div>
-			<div class="content">
-				<article id="tipos">
-					<h2>Tipos de estructuras</h2>
-					<p>
-						Las estructuras de datos son tipos de datos complejos en los que se suelen guardar diferentes tipos de informacion dependiendo
-						de la estructura, estas a su vez pueden tener valores complejos o primitivos. Las estructuras de datos pueden dividirse en 3
-						categorias <a href="#jerarquicas">jerárquicas</a>, <a href="#lineales">lineales</a> y <a href="#abstractas">abstractas</a>.
-					</p>
-				</article>
-				<article id="jerarquicas">
-					<h2>Jerárquicas</h2>
-					<section id="arbol-general">
-						<h3>Árbol General</h3>
-						<div class="img1 p1">
-							<p>
-								Las estructuras de árbol tienen su valor propio y ademas otras estructuras del mismo tipo como hijos. Esto hace que al
-								momento de ser representada tenga una forma similar a un árbol con sus ramas y sus hojas como se muestra en la imagen.
-							</p>
-							<p>
-								Un claro ejemplo de este tipo de estructuras es una pagina web en la que los diferentes elementos ejercen como nodos hijos
-								de otro como se es visible al momento de crear el documento HTML.
-							</p>
-							<img src="img/arbol-general.png" />
-						</div>
-					</section>
-					<section id="arbol-binario">
-						<h3 class="derecha">Árbol Binario</h3>
-						<div class="img2 p2">
-							<p>Lo que difiere un árbol biario de uno general es que el binario solo puede tener 2 hijos, el izquierdo y el derecho.</p>
-							<p>
-								El árbol binario tiene una variante que esta diseñada para buscar elementos el "árbol binario de busqueda" en el que se
-								ponen los valores menores hacia un lado y los mayores al otro haciendo que la busqueda se mas facil.
-							</p>
-							<img src="img/arbol-binario.png" />
-						</div>
-					</section>
-				</article>
-				<article id="lineales">
-					<h2>Lineales</h2>
-					<section id="arreglo">
-						<h3>Arreglo</h3>
-						<div class="img2 p1 pf">
-							<p>
-								Los arreglos tambien conocidas como listas son un tipo de datos que se almacenan de forma secuencial en memoria, en esta
-								estructura leer un elemento en la posición
-								<i>n</i> es muy facil pero agregar un elemento es costoso si el espacio en memoria actual no es lo suficientemente grandea
-								ademas de que borrar un elemento que no sea el ultimo es muy costoso por tener que copiar la información para que la lista
-								no quede con un hueco vacio.
-							</p>
-							<p>En conclusion los arreglos son muy eficientes para leer información pero no para ser modificados con frecuencia.</p>
-							<img src="img/arreglo.jpg" />
-						</div>
-					</section>
-					<section id="lista-enlazada">
-						<h3 class="derecha">Lista enlazada</h3>
-						<div class="img1 p1 pf">
-							<p>
-								Las listas enlazadas los datos pueden estar dispersos por la memoria siendo unidos unicamente por la referencia del elemento
-								anterior lo que hace que eliminar elementos sea tan facil como solo cambiar la referencia del elemento esto disminuye el
-								coste de creacion y borrado de elementos pero dificulta la lectura de elementos siendo practicamente lo opuesto a un
-								arreglo.
-							</p>
-							<p>
-								Las listas enlazadas son mas eficientes para modificar pero no lo son para leer el contenido de este debido a que hay que ir
-								elemento por elemento hasta llegar al dato deseado.
-							</p>
-							<img src="img/lista-enlazada.png" />
-						</div>
-					</section>
-					<div class="doble-section" id="pila-cola">
-						<section id="pila">
-							<h3>Pila</h3>
-							<div class="img1 p1 pf">
-								<p>
-									Las listas enlazadas los datos pueden estar dispersos por la memoria siendo unidos unicamente por la referencia del
-									elemento anterior lo que hace que eliminar elementos sea tan facil como solo cambiar la referencia del elemento esto
-									disminuye el coste de creacion y borrado de elementos pero dificulta la lectura de elementos siendo practicamente lo
-									opuesto a un arreglo.
-								</p>
-								<p>
-									Las listas enlazadas son mas eficientes para modificar pero no lo son para leer el contenido de este debido a que hay que
-									ir elemento por elemento hasta llegar al dato deseado.
-								</p>
-								<img src="img/lista-enlazada.png" />
-							</div>
-						</section>
-						<section id="cola">
-							<h3 class="derecha">Cola</h3>
-							<div class="img1 p1 pf">
-								<p>
-									Las listas enlazadas los datos pueden estar dispersos por la memoria siendo unidos unicamente por la referencia del
-									elemento anterior lo que hace que eliminar elementos sea tan facil como solo cambiar la referencia del elemento esto
-									disminuye el coste de creacion y borrado de elementos pero dificulta la lectura de elementos siendo practicamente lo
-									opuesto a un arreglo.
-								</p>
-								<p>
-									Las listas enlazadas son mas eficientes para modificar pero no lo son para leer el contenido de este debido a que hay que
-									ir elemento por elemento hasta llegar al dato deseado.
-								</p>
-								<img src="img/lista-enlazada.png" />
-							</div>
-						</section>
-					</div>
-				</article>
-			</div>
-		</main>
-		<!-- Se pone el header despues para que este enfrente del main -->
-		<header>
-			<div class="title">
-				<img src="img/logo.svg" alt="Logo" />
-				<h1>Página de la programación</h1>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="index.html">inicio</a></li>
-					<li><a href="logica.html">logica</a></li>
-					<li><a href="estructuras.html">estructuras</a></li>
-					<li><a href="algoritmo.html">algoritmo</a></li>
-				</ul>
-			</nav>
-		</header>
-	</body>
+        <nav>
+          <ol>
+            <li><a href="#tipos">Tipos de estructuras</a></li>
+            <li>
+              <a href="#jerarquicas">Jerárquicas</a>
+              <ol>
+                <li><a href="#arbol-general">Arbol General</a></li>
+                <li><a href="#arbol-binario">Arbol Binario</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#lineales">Lineales</a>
+              <ol>
+                <li><a href="#vactor">Vector</a></li>
+                <li><a href="#lista-enlazada">Lista enlazada</a></li>
+                <li>
+                  <a href="#pila-cola">Pila y Cola</a>
+                  <ol>
+                    <li><a href="#pila">Pila</a></li>
+                    <li><a href="#cola">Cola</a></li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <a href="#abstractas">Abstractas</a>
+              <ol>
+                <li><a href="#conjunto">Conjunto</a></li>
+                <li><a href="#diccionario">Diccionario</a></li>
+              </ol>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="content">
+        <article id="tipos">
+          <h2>Tipos de estructuras</h2>
+          <p>
+            Las estructuras de datos son tipos de datos complejos en los que se suelen guardar
+            diferentes tipos de informacion dependiendo de la estructura, estas a su vez pueden
+            tener valores complejos o primitivos. Las estructuras de datos pueden dividirse en 3
+            categorias <a href="#jerarquicas">jerárquicas</a>, <a href="#lineales">lineales</a> y
+            <a href="#abstractas">abstractas</a>.
+          </p>
+        </article>
+        <article id="jerarquicas">
+          <h2>Jerárquicas</h2>
+          <section id="arbol-general">
+            <h3>Árbol General</h3>
+            <div class="img1 p1">
+              <p>
+                Las estructuras de árbol tienen su valor propio y ademas otras estructuras del mismo
+                tipo como hijos. Esto hace que al momento de ser representada tenga una forma
+                similar a un árbol con sus ramas y sus hojas como se muestra en la imagen.
+              </p>
+              <p>
+                Un claro ejemplo de este tipo de estructuras es una pagina web en la que los
+                diferentes elementos ejercen como nodos hijos de otro como se es visible al momento
+                de crear el documento HTML.
+              </p>
+              <img src="img/arbol-general.png" />
+            </div>
+          </section>
+          <section id="arbol-binario">
+            <h3 class="derecha">Árbol Binario</h3>
+            <div class="img2 p2">
+              <p>
+                Lo que difiere un árbol biario de uno general es que el binario solo puede tener 2
+                hijos, el izquierdo y el derecho.
+              </p>
+              <p>
+                El árbol binario tiene una variante que esta diseñada para buscar elementos el
+                "árbol binario de busqueda" en el que se ponen los valores menores hacia un lado y
+                los mayores al otro haciendo que la busqueda se mas facil.
+              </p>
+              <img src="img/arbol-binario.png" />
+            </div>
+          </section>
+        </article>
+        <article id="lineales">
+          <h2>Lineales</h2>
+          <section id="vactor">
+            <h3>Vactor</h3>
+            <div class="img2 p1 pf">
+              <p>
+                Los vectores tambien conocidos como arreglos son un tipo de datos que se almacenan
+                de forma secuencial en memoria, en esta estructura leer un elemento en la posición
+                <i>n</i> es muy facil pero agregar un elemento es costoso si el espacio en memoria
+                actual no es lo suficientemente grandea ademas de que borrar un elemento que no sea
+                el ultimo es muy costoso por tener que copiar la información para que la lista no
+                quede con un hueco vacio.
+              </p>
+              <p>
+                En conclusion los vectores son muy eficientes para leer información pero no para ser
+                modificados con frecuencia.
+              </p>
+              <img src="img/arreglo.jpg" />
+            </div>
+          </section>
+          <section id="lista-enlazada">
+            <h3 class="derecha">Lista enlazada</h3>
+            <div class="img1 p1 pf">
+              <p>
+                Las listas enlazadas los datos pueden estar dispersos por la memoria siendo unidos
+                unicamente por la referencia del elemento anterior lo que hace que eliminar
+                elementos sea tan facil como solo cambiar la referencia del elemento esto disminuye
+                el coste de creacion y borrado de elementos pero dificulta la lectura de elementos
+                siendo practicamente lo opuesto a un arreglo.
+              </p>
+              <p>
+                Las listas enlazadas son mas eficientes para modificar pero no lo son para leer el
+                contenido de este debido a que hay que ir elemento por elemento hasta llegar al dato
+                deseado.
+              </p>
+              <img src="img/lista-enlazada.png" />
+            </div>
+          </section>
+          <div class="doble-section" id="pila-cola">
+            <section id="pila">
+              <h3>Pila</h3>
+              <div class="img1 p1 pf">
+                <p>
+                  Las pilas tambien conocidas como "Stack" por su nombre en ingles son una
+                  estructura que sigue las reglas FILO (First in Last out) el primero en entrar es
+                  el ultimo en salir, esta estructura es la que se usa en la ejecución de codigo en
+                  los interpretes para saber en que linea de la ejecución se encuentra el programa
+                  las denominadas "Pila de llamadas".
+                </p>
+                <p>
+                  El nombre de esta estructura como el de la siguiente reprsentan su funcionamiento,
+                  esta estructura puede ser implementada con listas enlazadas o arreglos, segun las
+                  necesidades de el progrmador y las funciones que tendra la estructura.
+                </p>
+                <img src="img/pila.svg" />
+              </div>
+            </section>
+            <section id="cola">
+              <h3 class="derecha">Cola</h3>
+              <div class="img1 p1">
+                <p>
+                  Por otro lado estan las colas que tambien llamadas filas por su comportamiento en
+                  el que la primera que entra es la primera en salir, FIFO (First in First out),
+                  esta estructura le da una mayor prioridad de procesamiento al primero que llego
+                  tal como pasaria en la fila de una tienda.
+                </p>
+                <p>
+                  Esta estructura tiene una eficiencia similar a la de una pila, se recomineda
+                  utilizar una lista doblemente enlazada para su implementacion
+                </p>
+                <img src="img/cola.svg" />
+              </div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- Se pone el header despues para que este enfrente del main -->
+    <header>
+      <div class="title">
+        <img src="img/logo.svg" alt="Logo" />
+        <h1>Página de la programación</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">inicio</a></li>
+          <li><a href="logica.html">logica</a></li>
+          <li><a href="estructuras.html">estructuras</a></li>
+          <li><a href="algoritmo.html">algoritmo</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
 </html>
