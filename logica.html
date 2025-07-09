@@ -31,15 +31,15 @@
               <a href="#tipos-datos">Tipos de datos</a>
               <ol>
                 <li><a href="#buleano">Buleano</a></li>
+                <li><a href="#caracter">Caracter</a></li>
                 <li><a href="#entero">Entero</a></li>
                 <li><a href="#flotante">Punto Flotante</a></li>
-                <li><a href="#caracter">Caracter</a></li>
               </ol>
             </li>
             <li>
               <a href="#operadores">Operadores</a>
               <ol>
-                <li><a href="#comparacion">Operadores Comparativos</a></li>
+                <li><a href="#buleanos">Operadores Buleanos</a></li>
                 <li><a href="#matematicos">Operadores Matematicos</a></li>
                 <li><a href="#bits">Operadores de Bits</a></li>
               </ol>
@@ -50,14 +50,121 @@
       <div class="content">
         <article id="tipos-datos">
           <h2>Tipos de datos</h2>
+          <p>
+            Los tipos de datos son muy importantes para representar los valores a usar
+            correctamente. Para evitar tener un comportamiento inesperado al intentar sumar un
+            numero a un caracter. Esto suele dar error en algunos lenguajes que esperan una
+            conversion de tipo.
+          </p>
           <section id="buleano">
-            <h2>Buleano</h2>
-            <p>
-              Los buleanos son un tipo en el que solo existen dos valores verdadero o falso, este
-              tipo de datos son los que controlan el flujo de el programa debido a que son los que
-              se usan para las condiciones y para el control de los bucles tanto para los while como
-              los for incluso para hacer que las funciones recursivas no desborden el callstack.
-            </p>
+            <h3>Buleano</h3>
+            <div class="img1 p1">
+              <p class="solo-p1">
+                Los buleanos son un tipo en el que solo existen dos valores verdadero o falso, este
+                tipo de datos son los que controlan el flujo de el programa debido a que son los que
+                se usan para las condiciones y para el control de los bucles tanto para los while
+                como los for incluso para hacer que las funciones recursivas no desborden el
+                callstack.
+              </p>
+              <img src="img/buleano.png" />
+            </div>
+          </section>
+          <section id="caracter">
+            <h3 class="derecha">Caracter</h3>
+            <div class="img1 p1">
+              <p class="solo-p1">
+                Los caracteres son un tipo de dato que representan un caracter puede ser de 8bits
+                para ascii o 16bits para unicode, esto depende de el lenguaje que se este usando,
+                incluso hay lenguajes que implementan directamente las
+                <i>cadenas de caracteres</i> listas que solo tienen caracteres.
+              </p>
+              <img src="img/caracter.jpg" />
+            </div>
+          </section>
+          <div class="doble-section">
+            <section id="entero">
+              <h3>Entero</h3>
+              <div class="img1 p1">
+                <p>
+                  Este tipo de dato como su nombre lo sugiere almacena un valor numerico sin
+                  decimales aunque hay que tener en cuanta que estos enteros pueden ser de 8, 16,
+                  32, 64 o 128 bits y estos pueden o no incluir signo.
+                </p>
+                <p>
+                  Los enteros llevan signo a no ser que se le especifique lo contrario a los
+                  programas diciendoles que el tipo de dato es un entero sin signo.
+                </p>
+                <img src="img/entero.png" />
+              </div>
+            </section>
+            <section id="flotante">
+              <h3 class="derecha">Punto Flotante</h3>
+              <div class="img1 p1">
+                <p>
+                  Los Punto flotante tambien conocidos como decimales son aquellos que contienen
+                  numeros que pueden ser no enteros teniendo una parte entera y una parte
+                  fraccionaria haciendo que se pueda hacer calculos pequeños. Estos se guardan en
+                  notacion cientifica.
+                </p>
+                <p>
+                  <b>Nota:</b> No se recomienda usar para valores importantes porque existen algunos
+                  errores de calculo como con <i>0.1 + 0.2</i> que suele dar un valor erroneo como
+                  <i>0.30000000000000004</i> en la mayoria de los lenguajes.
+                </p>
+                <img src="img/decimal.jpg" />
+              </div>
+            </section>
+          </div>
+        </article>
+        <article id="operadores">
+          <h2>Operadores</h2>
+          <section id="buleanos">
+            <h3>Operadores Buleanos</h3>
+            <div class="img2 p1">
+              <p>
+                Los operadores buleanos son aquellos que dan un resultado en un tipo de dato buleano
+                en esta categoria entran los comparadores: igual que (<i>==</i>), diferente que
+                (<i>!=</i>), mayor que (<i>&gt;</i>), menor que (<i>&lt;</i>) o sus combinaciones.
+                Ademas de la negacion (<i>!</i>), el comparador "y" (<i>&&</i>) y el operador "o"
+                (<i>||</i>).
+              </p>
+              <p>
+                La función de estos operadores es funcionar como operadores logicos para la
+                evaluación de condiciones.
+              </p>
+              <img src="img/operadores-buleanos.jpg" />
+            </div>
+          </section>
+          <section id="matematicos">
+            <h3 class="derecha">Operadores Matematicos</h3>
+            <div class="img1 p1">
+              <p>
+                La operadores matematicos son como su nombre lo describe los que se usan para
+                realizar operaciones matematicas basicas tales como la suma, resta, multiplicación,
+                division e incluso el modulo.
+              </p>
+              <p>
+                <b>Nota:</b> En esta categoria tambien hay operaciones como la negación. Segun que lenguaje se
+                este usando puede incluir potensación o divisiones enteras.
+              </p>
+              <img src="img/operadores-matematicos.png" />
+            </div>
+          </section>
+          <section id="bits">
+            <h3>Operadores de Bits</h3>
+            <div class="img2 p1">
+              <p>
+                Los operadores de bits realizan determinadas operaciones bit a bit a todo el tipo de
+                dato, estas operaciones son mas ligeras debido a que estas operaciones son las
+                basicas de un procesador, con enteros es mas facil hacer <i>x>>1</i> que hacer
+                <i>x/2</i> ambas hacen lo mismo pero el costo de una division suele ser mayor.
+              </p>
+              <p>
+                Estos operadores son a nivel de bits y si se usan correctamente pueden simplificar
+                varias operaciones
+              </p>
+              <img src="img/operadores-bits.png" />
+            </div>
           </section>
         </article>
       </div>
