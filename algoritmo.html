@@ -28,9 +28,9 @@
         <nav>
           <ol>
             <li>
-              <a href="#puntos">Puntos a Evaluar</a>
+              <a href="#algoritmo">Algoritmo</a>
               <ol>
-                <li><a href="#complejidad">Complejidad O(n)</a></li>
+                <li><a href="#big-o">Big-O</a></li>
               </ol>
             </li>
             <li>
@@ -44,18 +44,46 @@
         </nav>
       </div>
       <div class="content">
-        <article>
-          <h2>Titulo</h2>
-          <section>
-            <h3>SubTitulo</h3>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum assumenda adipisci
-            velit, voluptatibus dolore enim in nemo mollitia provident, rerum laborum quae impedit
-            nisi hic, dolores quibusdam cum. Expedita sapiente ratione illum non excepturi, quod
-            labore voluptatum! Quasi, dolorum ratione aut voluptate voluptas quod ipsum assumenda
-            quidem ducimus iure neque.
+        <article id="algoritmo">
+          <h2>Algoritmo</h2>
+          <section id="big-o">
+            <h3>Big-O</h3>
+            <div class="img2 p1">
+              <p class="solo-p1">
+                Big-O es una medición en la que se toma en cuenta el peor de los casos por lo que es
+                la que se utiliza para medir el tiempo estimado que tardara un programa en ejecutar
+                el codigo.
+              </p>
+              <p>
+                Una vez calculado el tiempo de ejecucion de cada instrucción se suman y de esa suma
+                se eliminan las constantes solo se toma el valor mas alto.
+              </p>
+              <img src="img/BigO.webp" />
+            </div>
+            <ol>
+              <li>
+                Las instrucciones multiplican el valor propio con el valor del bloque por lo que si
+                una instruccion esta dentro de un bloque multiplicara se costo real por el del
+                bloque.<br />Ej: costo del bloque O(log n), costo de la instruccion O(n). Bajo este
+                contexto el costo total es de O(n log n).
+              </li>
+              <li>Si un bucle va secuancialmente (suma o resta) tiene O(n).</li>
+              <li>Si un bucle va potencialmente (multiplicación o división) tiene O(log n).</li>
+              <li>Si un bucle va exponencialmente (elevación o raiz) tiene O(log log n).</li>
+              <li>Si un bucle va exponencialmente (elevación o raiz) tiene O(log log n).</li>
+              <li>
+                Si una función se llama a sí misma <b>k veces por nivel</b> y cada llamada reduce el
+                tamaño del problema (por ejemplo, n - 1), la complejidad es O(k<sup>n</sup>), salvo
+                que haya optimizaciones como memoización.
+              </li>
+              <li>
+                En caso de que no se cumpla ninguna de las condiciones anteriores se determina como
+                complejidad constante O(1).
+              </li>
+            </ol>
           </section>
         </article>
-        <article>
+        <article id="ejemplos">
           <h2>Titulo</h2>
           <section>
             <h3>SubTitulo</h3>
@@ -65,6 +93,21 @@
             labore voluptatum! Quasi, dolorum ratione aut voluptate voluptas quod ipsum assumenda
             quidem ducimus iure neque.
           </section>
+          <div class="doble-section">
+            <h3 class="title">Fibonacci</h3>
+            <section>
+              <h4>Recursivo</h4>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, repellendus
+              eaque nemo error quis repudiandae nihil inventore iure, odit quibusdam earum et
+              reiciendis. Laudantium suscipit aut, omnis eveniet facere unde.
+            </section>
+            <section>
+              <h4>Iterativo</h4>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, repellendus
+              eaque nemo error quis repudiandae nihil inventore iure, odit quibusdam earum et
+              reiciendis. Laudantium suscipit aut, omnis eveniet facere unde.
+            </section>
+          </div>
         </article>
       </div>
     </main>
