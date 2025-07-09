@@ -17,6 +17,28 @@ li ol {
     background: transparent;
   }
 }
+/* El logo toma impulso y cae con fuerza y se pasa al volver a su posicion inicial */
+@keyframes nav-icon {
+  0% {
+    transform: translateY(0px);
+  }
+  70% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  85% {
+    transform: translateY(10px);
+  }
+  95% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 :target {
   animation: target 0.3s normal ease-in;
 }
@@ -36,6 +58,7 @@ header {
       height: 4rem;
       width: 4rem;
       margin: 1rem 0 1rem 1rem;
+      animation: nav-icon 5s infinite;
     }
     h1 {
       font-size: 3rem;
@@ -70,6 +93,11 @@ header {
   }
   &:hover {
     height: 12rem;
+    .title img {
+      /* Se quita la animacion en su totalidad porque */
+      /* No queremos que se pause justo a media animacion */
+      animation-name: none;
+    }
   }
 }
 main {
@@ -77,8 +105,9 @@ main {
   top: 6rem;
   bottom: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   .content {
-    max-width: 60%;
+    width: 60%;
     margin: 1rem auto;
     article {
       box-sizing: border-box;
@@ -87,7 +116,6 @@ main {
       border-radius: 10px;
       padding: 1rem;
       background-color: #333;
-      transition: max-width 0.3s ease;
       h2 {
         font-size: 3rem;
         text-align: center;
@@ -232,7 +260,7 @@ main {
 
 @media screen and (min-width: 1700px) {
   main .content {
-    max-width: 50%;
+    width: 50%;
   }
 }
 @media screen and (max-width: 1500px) {
@@ -271,10 +299,13 @@ main {
   }
 }
 @media screen and (max-width: 1300px) {
-  main {
+  main{
     margin-left: 12rem;
+    &.sin-nav {
+      margin-left: 0;
+    }
     .content {
-      max-width: 80%;
+      width: 80%;
     }
   }
 }
