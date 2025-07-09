@@ -11,7 +11,7 @@ li ol {
 }
 @keyframes target {
   0% {
-    background-color: #ffffff20;
+    background-color: rgba(255, 255, 255, 0125);
   }
   100% {
     background: transparent;
@@ -41,6 +41,53 @@ li ol {
 
 :target {
   animation: target 0.3s normal ease-in;
+}
+.derecha {
+  text-align: right;
+}
+.code {
+  display: block;
+  background: #1e1e1e;
+  padding: 0.2em 0.5em;
+  color: #d4d4d4;
+  max-width: 100%;
+  overflow-x: auto;
+  font-family: Consolas, 'Courier New', monospace;
+  .keyword {
+    color: #569cd6;
+    font-style: italic;
+    &.control {
+      color: #c586c0;
+    }
+  }
+  .function {
+    color: #dcdcaa;
+  }
+  .variable {
+    color: #9cdcfe;
+    &.readonly {
+      color: #4fc1ff;
+    }
+  }
+  .type {
+    color: #4ec9b0;
+  }
+  .constant {
+    color: #b5cea8;
+  }
+  .bracket-1 {
+    color: #ffff00;
+  }
+  .bracket-2 {
+    color: #d351c8;
+  }
+  .bracket-3 {
+    color: #2e94e7;
+  }
+  .shadow {
+    color: gray;
+    user-select: none;
+  }
 }
 header {
   position: fixed;
@@ -86,7 +133,7 @@ header {
           text-transform: capitalize;
         }
         &:hover {
-          background-color: #ffffff20;
+          background-color: rgba(255, 255, 255, 0.125);
         }
       }
     }
@@ -125,20 +172,8 @@ main {
       }
       div.doble-section {
         display: grid;
-        grid-template:
-          't t' auto
-          's1 s2' auto / 1fr 1fr;
-        h3.title {
-          font-size: 2rem;
-          text-align: center;
-          margin-bottom: 0;
-          grid-area: t;
-        }
+        grid-template: 's1 s2' auto / 50% 50%;
         section {
-          h4 {
-            font-size: 1.5rem;
-            margin-bottom: 0;
-          }
           div {
             &.img1.p2 {
               grid-template:
@@ -176,9 +211,6 @@ main {
         h3 {
           font-size: 2rem;
           margin-bottom: 0;
-          &.derecha {
-            text-align: right;
-          }
         }
         div {
           display: grid;
@@ -229,6 +261,44 @@ main {
         }
       }
     }
+    div.botones {
+      position: relative;
+      margin: 1rem 0;
+      box-sizing: border-box;
+      width: 80%;
+      height: 3.2rem;
+      justify-self: center;
+      a {
+        display: none;
+        position: absolute;
+        border-radius: 10px;
+        padding: 1rem;
+        background-color: #333;
+        color: currentColor;
+        text-decoration: none;
+        font-weight: bold;
+        svg {
+          height: 1rem;
+          width: 1rem;
+          fill: red;
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      &.btn-ant {
+        a:first-of-type {
+          display: block;
+          left: 0;
+        }
+      }
+      &.btn-sig {
+        a:last-of-type {
+          display: block;
+          right: 0;
+        }
+      }
+    }
   }
   .sub-nav {
     position: fixed;
@@ -248,7 +318,6 @@ main {
       box-sizing: border-box;
     }
     nav {
-      text-decoration: bold;
       overflow: hidden;
       padding-right: 1rem;
       ol li {
@@ -414,7 +483,7 @@ main {
     article {
       div.doble-section {
         display: grid;
-        grid-template: 's1' auto 's2' auto / 1fr;
+        grid-template: 's1' auto 's2' auto / 100%;
 
         section:nth-child(1n) {
           margin: 0;

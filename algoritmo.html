@@ -30,14 +30,15 @@
             <li>
               <a href="#algoritmo">Algoritmo</a>
               <ol>
+                <li><a href="#que-es">¿Que es un algoritmo?</a></li>
                 <li><a href="#big-o">Big-O</a></li>
               </ol>
             </li>
             <li>
-              <a href="#ejemplos">Ejemplos</a>
+              <a href="#fibonacci">Fibonacci</a>
               <ol>
-                <li><a href="#busqueda-binaria">Busqueda Binaria</a></li>
-                <li><a href="#fibonacci">Fibonacci</a></li>
+                <li><a href="#recursivo">Recursivo</a></li>
+                <li><a href="#iterativo">Iterativo</a></li>
               </ol>
             </li>
           </ol>
@@ -46,8 +47,16 @@
       <div class="content">
         <article id="algoritmo">
           <h2>Algoritmo</h2>
+          <section id="que-es">
+            <h3>¿Que es un algorimo?</h3>
+            <p>
+              Un algoritmo son el conjunto de instrucciones que se deben de seguir para realizar
+              cierta actividad, como son desde mostrar en consola algun texto como "Hello, World!" o
+              algo mas complejo como obtener el indice de algun elemento e incluso ordenar listas.
+            </p>
+          </section>
           <section id="big-o">
-            <h3>Big-O</h3>
+            <h3 class="derecha">Big-O</h3>
             <div class="img2 p1">
               <p class="solo-p1">
                 Big-O es una medición en la que se toma en cuenta el peor de los casos por lo que es
@@ -83,32 +92,67 @@
             </ol>
           </section>
         </article>
-        <article id="ejemplos">
-          <h2>Titulo</h2>
-          <section>
-            <h3>SubTitulo</h3>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum assumenda adipisci
-            velit, voluptatibus dolore enim in nemo mollitia provident, rerum laborum quae impedit
-            nisi hic, dolores quibusdam cum. Expedita sapiente ratione illum non excepturi, quod
-            labore voluptatum! Quasi, dolorum ratione aut voluptate voluptas quod ipsum assumenda
-            quidem ducimus iure neque.
-          </section>
+        <article id="fibonacci">
+          <h2>Fibonacci</h2>
+          <p>
+            Aqui un ejemplo de como se puede resolver un mismo problema de utilizando diferentes
+            algorimos, cada algoritmo con sus diferentes tiempos de ejecución y sus diferencias en
+            la complejidad, ya que, el <a href="#recursivo">recursivo</a> es mas fácil de leer pero
+            con un gran costo de ejecución a comparación de el
+            <a href="#iterativo">iterativo</a> que es mas dificil de entender pero con un menor
+            costo de ejecución. haciendo que la forma iterativa sea la forma mas optima para
+            realizarlo.
+          </p>
+          <p>
+            <b>Nota:</b> El codigo puede variar segun el lenguaje. En este caso se utilizara código
+            en TypeScript.
+          </p>
           <div class="doble-section">
-            <h3 class="title">Fibonacci</h3>
-            <section>
-              <h4>Recursivo</h4>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, repellendus
-              eaque nemo error quis repudiandae nihil inventore iure, odit quibusdam earum et
-              reiciendis. Laudantium suscipit aut, omnis eveniet facere unde.
+            <section id="recursivo">
+              <h3>Recursivo</h3>
+              <pre class="code">
+<span class="keyword">function</span> <span class="function">fibonacci</span><span class="bracket-1">(</span><span class="variable">n</span>: <span class="type">number</span><span class="bracket-1">)</span>: <span class="type">number</span> <span class="bracket-1">{</span>
+  <span class="keyword control">if</span> <span class="bracket-2">(</span><span class="variable">n</span> &lt;= <span class="constant">1</span><span class="bracket-2">)</span><span class="shadow">               O(1)</span>
+    <span class="keyword control">return</span> <span class="variable">n</span>;<span class="shadow">               O(1)</span>
+  <span class="keyword">let</span> <span class="variable">a</span> = <span class="function">fibonacci</span><span class="bracket-2">(</span><span class="variable">n</span> - <span class="constant">1</span><span class="bracket-2">)</span>;<span class="shadow"> O(k<sup>n-1</sup>), k = 1</span>
+  <span class="keyword">let</span> <span class="variable">b</span> = <span class="function">fibonacci</span><span class="bracket-2">(</span><span class="variable">n</span> - <span class="constant">2</span><span class="bracket-2">)</span>;<span class="shadow"> O(k<sup>n-1</sup>), k = 2</span>
+  <span class="keyword control">return</span> <span class="variable">a</span> + <span class="variable">b</span>;<span class="shadow">             2<sup>n</sup> + 2 = O(2<sup>n</sup>)</span>
+<span class="bracket-1">}</span></pre>
             </section>
-            <section>
-              <h4>Iterativo</h4>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, repellendus
-              eaque nemo error quis repudiandae nihil inventore iure, odit quibusdam earum et
-              reiciendis. Laudantium suscipit aut, omnis eveniet facere unde.
+            <section id="iterativo">
+              <h3 class="derecha">Iterativo</h3>
+              <pre class="code">
+<span class="keyword">function</span> <span class="function">fibonacci</span><span class="bracket-1">(</span><span class="variable">n</span>: <span class="type">number</span><span class="bracket-1">)</span>: <span class="type">number</span> <span class="bracket-1">{</span>
+  <span class="keyword control">if</span> <span class="bracket-2">(</span><span class="variable">n</span> &lt;= <span class="constant">1</span><span class="bracket-2">)</span><span class="shadow">                    O(1)</span>
+    <span class="keyword control">return</span> <span class="variable">n</span>;<span class="shadow">                    O(1)</span>
+  <span class="keyword">let</span> <span class="variable">a</span> = <span class="constant">0</span>;<span class="shadow">                     O(1)</span>
+  <span class="keyword">let</span> <span class="variable">b</span> = <span class="constant">1</span>;<span class="shadow">                     O(1)</span>
+  <span class="keyword control">for</span> <span class="bracket-2">(</span><span class="keyword">let</span> <span class="variable">i</span> = <span class="constant">2</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++<span class="bracket-2">) {</span> <span class="shadow">O(n)</span>
+    <span class="keyword">const</span> <span class="variable readonly">temp</span> = <span class="variable">a</span> + <span class="variable">b</span>;<span class="shadow">          O(n)</span>
+    <span class="variable">a</span> = <span class="variable">b</span>;<span class="shadow">                       O(n)</span>
+    <span class="variable">b</span> = <span class="variable readonly">temp</span>;<span class="shadow">                    O(n)</span>
+  <span class="bracket-2">}</span><span class="shadow">                              O(n)</span>
+  <span class="keyword control">return</span> <span class="variable">b</span>;<span class="shadow">                      4n + 4 = O(n)</span>
+<span class="bracket-1">}</span></pre>
             </section>
           </div>
         </article>
+        <div class="botones btn-ant">
+          <a href="estructuras.html">
+            <svg
+              fill="#000000"
+              width="800px"
+              height="800px"
+              viewBox="-64 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M365.46 357.74L147.04 255.89l218.47-101.88c16.02-7.47 22.95-26.51 15.48-42.53l-13.52-29C360 66.46 340.96 59.53 324.94 67L18.48 209.91a32.014 32.014 0 0 0-18.48 29v34.24c0 12.44 7.21 23.75 18.48 29l306.31 142.83c16.06 7.49 35.15.54 42.64-15.52l13.56-29.08c7.49-16.06.54-35.15-15.53-42.64z"
+              />
+            </svg>
+            Estructuras
+          </a>
+        </div>
       </div>
     </main>
     <!-- Se pone el header despues para que este enfrente del main -->
@@ -120,7 +164,7 @@
       <nav>
         <ul>
           <li><a href="index.html">inicio</a></li>
-          <li><a href="logica.html">logica</a></li>
+          <li><a href="logica.html">Lógica</a></li>
           <li><a href="estructuras.html">estructuras</a></li>
           <li><a href="algoritmo.html">algoritmo</a></li>
         </ul>
